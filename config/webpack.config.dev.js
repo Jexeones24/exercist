@@ -43,9 +43,9 @@ module.exports = {
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
       'react-native': 'react-native-web',
-      'containers': path.resolve('app/containers'),
-      'components': path.resolve('app/components'),
-      'util': path.resolve('app/util')
+      'containers': path.resolve('src/containers'),
+      'components': path.resolve('src/components'),
+      'util': path.resolve('src/util')
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
