@@ -1,41 +1,20 @@
-import omit from 'lodash/omit';
-import { getRandom, getNRandom } from 'util/random';
+import { calculateSecondsPerMovement, getMovements } from '../util/movement';
+import { getRandom } from 'util/random';
+import { assignWeightLoadsToMovements, getFormattedWeightLoads } from '../util/weightLoad';
 import { AMRAP } from './constants';
-import { MONOSTRUCTURAL, MOVEMENTS, METERS, WEIGHTLIFTING, WEIGHT_LOADS } from '../../../movementData';
 
-const getWeightLoad = (movement) => {
-  if (movement.type === WEIGHTLIFTING) {
-    const intensity = getRandom(WEIGHT_LOADS);
-    const loads = movement.weightLoads[intensity];
+const estimatedTimePerRoundInSeconds = (time) => Math.floor((time) * .15) * 60;
 
-    return {
-      intensity,
-      loads,
-      ...omit(movement, ['intensity', 'weightLoads'])
-    };
-  }
-
-  return { ...omit(movement, ['intensity']) };
-};
-
-const getReps = (movement, seconds) => {
-  let repsPerRound;
-
-  if (movement.type === MONOSTRUCTURAL && movement.units === METERS) {
-    repsPerRound = Math.floor(seconds / movement.secondsPerRep) * 100;
-    return [ repsPerRound, movement ]
-  }
-
-  repsPerRound = Math.floor(seconds / movement.secondsPerRep)
-  return [ repsPerRound, movement ]
-};
-
-export const buildAmrap = (time, duration) => {
+export const buildAmrap = (time, duration, workoutStyle) => {
   const movementCount = getRandom(AMRAP.movementCounts[duration]);
-  const estimatedTimePerRound = Math.floor(time * .15);
-  const secondsPerMovement = (estimatedTimePerRound * 60) / movementCount;
-  const movements = getNRandom(movementCount, MOVEMENTS);
-  const movementsWithWeightLoads = movements.map(movement => getWeightLoad(movement));
+  const movements = getMovements(movementCount);
+  const movementsWithWeightLoads = assignWeightLoadsToMovements(movements);
+  const secondsPerMovement = calculateSecondsPerMovement(estimatedTimePerRoundInSeconds(time), movementCount);
+  const formattedRepsAndMovements = getFormattedWeightLoads(movementsWithWeightLoads, secondsPerMovement);
+  const title = `${workoutStyle.longName} in ${time} Minutes`;
 
-  return movementsWithWeightLoads.map(movement => getReps(movement, secondsPerMovement));
+  return {
+    title,
+    formattedRepsAndMovements
+  };
 };

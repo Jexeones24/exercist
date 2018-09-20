@@ -1,8 +1,10 @@
-import { range } from 'util/range';
+import { AMRAP } from './AMRAP/constants';
+import { INTERVAL } from './Interval/constants';
+import { ROUNDS_FOR_TIME } from './RoundsForTime/constants';
 
-export const DURATIONS = {
-  SHORT_DURATION_RANGE: range(5, 13),
-  MODERATE_DURATION_RANGE: range(14, 25),
-  LONG_DURATION_RANGE: range(26, 45)
-};
+export const styles = [
+  AMRAP,
+  ROUNDS_FOR_TIME,
+  INTERVAL
+];
 

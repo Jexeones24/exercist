@@ -6,8 +6,8 @@ export const LIGHT = 'LIGHT';
 export const MODERATE = 'MODERATE';
 export const HEAVY = 'HEAVY';
 
-export const METERS = 'METERS';
-export const CALORIES = 'CALORIES';
+export const METERS = 'meter';
+export const CALORIES = 'Calorie';
 
 export const WEIGHT_LOADS = [
   LIGHT,
@@ -112,7 +112,7 @@ const DIP = {
 
 const MUSCLE_UP = {
   name: 'Muscle Up',
-  secondsPerRep: 5,
+  secondsPerRep: 8,
   type: GYMNASTIC
 };
 

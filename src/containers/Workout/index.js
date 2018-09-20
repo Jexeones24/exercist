@@ -6,10 +6,11 @@ class Workout extends Component {
 
   render () {
     const workout = this.workout();
+    console.log(workout);
 
     return (
       <div>
-        { workout }
+        HELLO
       </div>
     );
   }
