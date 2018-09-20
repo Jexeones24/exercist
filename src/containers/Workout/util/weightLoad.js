@@ -10,12 +10,13 @@ const getWeightLoad = (movement) => {
     const loads = movement.weightLoads[intensity];
 
     return {
+      intensity,
       loads,
       ...omit(movement, ['weightLoads'])
     };
   }
 
-  return { ...omit(movement, ['intensity']) };
+  return { ...movement };
 };
 
 export const assignWeightLoadsToMovements = (movements) => movements

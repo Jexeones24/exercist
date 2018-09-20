@@ -12,7 +12,7 @@ export const buildRoundsForTime = (time, duration, workoutStyle) => {
   const movementCount = getRandom(ROUNDS_FOR_TIME[duration].movements);
   const movements = getMovements(movementCount);
   const movementsWithWeightLoads = assignWeightLoadsToMovements(movements);
-  const secondsPerMovement = calculateSecondsPerMovement(timePerRound, movementCount);
+  const secondsPerMovement = calculateSecondsPerMovement(timePerRound, movementCount, movementsWithWeightLoads);
   const formattedRepsAndMovements = getFormattedWeightLoads(movementsWithWeightLoads, secondsPerMovement);
   const title = `${rounds} ${workoutStyle.longName}`;
 

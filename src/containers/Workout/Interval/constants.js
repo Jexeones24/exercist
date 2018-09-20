@@ -15,7 +15,8 @@ export const TABATA = {
     SHORT_DURATION_RANGE: [1],
     MODERATE_DURATION_RANGE: [1],
     LONG_DURATION_RANGE: [1]
-  }
+  },
+  workPeriodInSecondsWithRest: 20
 };
 
 export const EMOM = {
@@ -30,7 +31,8 @@ export const EMOM = {
     SHORT_DURATION_RANGE: [1],
     MODERATE_DURATION_RANGE: [1],
     LONG_DURATION_RANGE: [1]
-  }
+  },
+  workPeriodInSecondsWithRest: 50
 };
 
 export const E2MOM = {
@@ -45,7 +47,8 @@ export const E2MOM = {
     SHORT_DURATION_RANGE: [1, 2],
     MODERATE_DURATION_RANGE: [1, 2],
     LONG_DURATION_RANGE: [1, 2]
-  }
+  },
+  workPeriodInSecondsWithRest: 100
 };
 
 export const E3MOM = {
@@ -61,7 +64,8 @@ export const E3MOM = {
     SHORT_DURATION_RANGE: [1, 2],
     MODERATE_DURATION_RANGE: [1, 2],
     LONG_DURATION_RANGE: [1, 2]
-  }
+  },
+  workPeriodInSecondsWithRest: 150
 };
 
 export const INTERVAL_TYPES = [
