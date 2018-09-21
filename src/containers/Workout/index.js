@@ -23,8 +23,15 @@ class Workout extends Component {
   render () {
     return (
       <div className={styles['workout-container']}>
-        <h1>{ this.title }</h1>
-        <div>{ this.reps }</div>
+        <div className={styles.name}>STOOPID NAME</div>
+        <div className={styles['text-wrapper']}>
+          <h1>{ this.title }</h1>
+          <div>{ this.reps }</div>
+        </div>
+        <div className={styles.buttons}>
+          <button>NEXT</button>
+          <button>TRY !</button>
+        </div>
       </div>
     );
   }

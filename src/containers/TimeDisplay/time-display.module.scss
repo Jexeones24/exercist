@@ -1,4 +1,19 @@
-h3, h4 {
+.time-display-container {
+  margin-top: 20%;
+}
+
+.text-wrapper {
+  background-color: white;
+  padding: 8px;
+}
+
+h3,
+h4 {
+  color: #00FFFF;
+  font-weight: bold;
+}
+
+.time {
   color: #FFA500;
   font-weight: bold;
 }
@@ -9,7 +24,7 @@ h3, h4 {
 }
 
 .input {
-  background-color: silver;
+  background-color: white;
   font-size: 28px;
   font-weight: bolder;
   padding: 12px;

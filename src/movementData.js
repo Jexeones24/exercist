@@ -130,25 +130,25 @@ const HANDSTAND_WALK = {
 
 const BOX_JUMP = {
   name: 'Box Jump',
-  secondsPerRep: 3,
+  secondsPerRep: 4,
   type: GYMNASTIC
 };
 
 const WALLBALL = {
   name: 'Wallball',
-  secondsPerRep: 3,
+  secondsPerRep: 4,
   type: GYMNASTIC
 };
 
 const BALL_SLAM = {
   name: 'Ball Slam',
-  secondsPerRep: 3,
+  secondsPerRep: 4,
   type: GYMNASTIC
 };
 
 const BURPEE = {
   name: 'Burpee',
-  secondsPerRep: 4,
+  secondsPerRep: 5,
   type: GYMNASTIC
 };
 

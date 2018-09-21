@@ -26,9 +26,11 @@ class TimeDisplay extends Component {
 
   render () {
     return (
-      <React.Fragment>
-        <h3>Enter a desired WORKOUT TIME to begin.</h3>
-        <h4>A workout formatted within the desired time domain will be prepared.</h4>
+      <div className={styles['time-display-container']}>
+        <div className={styles['text-wrapper']}>
+          <h3>Enter a desired WORKOUT TIME to begin.</h3>
+          <h4>A workout formatted within the desired time domain will be prepared.</h4>
+        </div>
         <div className={styles['outer-input-wrapper']}>
           <div className={styles['input-wrapper']}>
             <div className={styles.input}>{this.state.value}</div>
@@ -37,9 +39,9 @@ class TimeDisplay extends Component {
             <div className={styles.minus} onClick={this.decrementTime}>-</div>
           </div>
         </div>
-        <h4>MIN: 5 min.</h4>
-        <h4>MAX: 45 min.</h4>
-      </React.Fragment>
+        <div className={styles.time}>MIN: 5 min.</div>
+        <div className={styles.time}>MAX: 45 min.</div>
+      </div>
     );
   }
 };
