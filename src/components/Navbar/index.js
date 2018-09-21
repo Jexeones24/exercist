@@ -1,4 +1,5 @@
 import React from 'react';
+import HamburgerMenu from 'components/Icons/HamburgerMenu';
 import styles from './navbar.module.scss';
 
 const Navbar = () => (
@@ -6,11 +7,7 @@ const Navbar = () => (
     <div className={styles.wrapper}>
       <h1>NAVBAR</h1>
       <div className={styles.icons}>
-        <div className={styles.menu}>
-          <div className={styles.bar} />
-          <div className={styles.bar} />
-          <div className={styles.bar} />
-        </div>
+        <HamburgerMenu />
       </div>
     </div>
   </div>
