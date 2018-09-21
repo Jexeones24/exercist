@@ -7,9 +7,14 @@
   padding: 8px;
 }
 
-h3,
 h4 {
   color: #00FFFF;
+  font-weight: bold;
+}
+
+.header {
+  color: #00FFFF;
+  font-size: 36px;
   font-weight: bold;
 }
 
@@ -21,6 +26,7 @@ h4 {
 .outer-input-wrapper {
   display: flex;
   justify-content: center;
+  margin-top: -16px;
 }
 
 .input {

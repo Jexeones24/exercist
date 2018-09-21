@@ -124,8 +124,9 @@ const HANDSTAND_PUSHUP = {
 
 const HANDSTAND_WALK = {
   name: 'Handstand Walk',
-  secondsPerRep: 3,
-  type: GYMNASTIC
+  secondsPerRep: 25,
+  type: MONOSTRUCTURAL,
+  units: METERS
 };
 
 const BOX_JUMP = {

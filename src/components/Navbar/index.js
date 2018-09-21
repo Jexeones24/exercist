@@ -5,7 +5,7 @@ import styles from './navbar.module.scss';
 const Navbar = () => (
   <div className={styles['navbar-container']}>
     <div className={styles.wrapper}>
-      <h1>NAVBAR</h1>
+      <h1>WILDCARD</h1>
       <div className={styles.icons}>
         <HamburgerMenu />
       </div>

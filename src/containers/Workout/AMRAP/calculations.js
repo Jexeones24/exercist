@@ -3,8 +3,9 @@ import { getRandom } from 'util/random';
 import { assignWeightLoadsToMovements, getFormattedWeightLoads } from '../util/weightLoad';
 import { AMRAP } from './constants';
 
-
 export const buildAmrap = (time, duration, workoutStyle) => {
+  const repScheme = getRandom(AMRAP.repSchemes);
+  console.log(repScheme);
   const movementCount = getRandom(AMRAP.movementCounts[duration]);
   const movements = getMovements(movementCount);
   const movementsWithWeightLoads = assignWeightLoadsToMovements(movements);

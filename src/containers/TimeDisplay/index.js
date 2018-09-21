@@ -2,33 +2,17 @@ import React, { Component } from 'react';
 import styles from './time-display.module.scss';
 
 class TimeDisplay extends Component {
-  state = { value: Number(45) }
+  state = { value: Number(16) }
 
-  incrementTime = (e) => {
-    if (this.state.value >= 5 && this.state.value <= 44) {
-      this.setState({ value: this.state.value + 1 });
-    }
-
-    return;
-  }
-
-  decrementTime = () => {
-    if (this.state.value > 5) {
-      this.setState({ value: this.state.value - 1 });
-    }
-
-    return;
-  }
-
-  handleTimeSubmit = () => {
-    this.props.getTimeSubmit(this.state.value);
-  }
+  incrementTime = (e) => (this.state.value >= 5 && this.state.value <= 44) && this.setState({ value: this.state.value + 1 });
+  decrementTime = () => this.state.value > 5 && this.setState({ value: this.state.value - 1 });
+  handleTimeSubmit = () => this.props.getTimeSubmit(this.state.value);
 
   render () {
     return (
       <div className={styles['time-display-container']}>
         <div className={styles['text-wrapper']}>
-          <h3>Enter a desired WORKOUT TIME to begin.</h3>
+          <div className={styles.header}>Enter a desired WORKOUT TIME to begin.</div>
           <h4>A workout formatted within the desired time domain will be prepared.</h4>
         </div>
         <div className={styles['outer-input-wrapper']}>
