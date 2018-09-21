@@ -2,12 +2,14 @@ export const SHORT_DURATION_RANGE = 'SHORT_DURATION_RANGE';
 export const MODERATE_DURATION_RANGE = 'MODERATE_DURATION_RANGE';
 export const LONG_DURATION_RANGE = 'LONG_DURATION_RANGE';
 
-export const INTERVAL = 'INTERVAL';
+export const INTERVAL = {
+  shortName: 'INTERVAL'
+};
 
 export const TABATA = {
   shortName: 'TABATA',
   longName: 'Tabata',
-  divisibleBy: [4],
+  divisibleBy: [4, 8, 16, 20],
   possibleDurations: [
     SHORT_DURATION_RANGE
   ],
