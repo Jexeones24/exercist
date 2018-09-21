@@ -2,23 +2,3 @@
   margin-top: 20%;
   padding: 8px;
 }
-
-.name,
-.text-wrapper {
-  background-color: white;
-  padding: 8px;
-  margin-bottom: 6px;
-}
-
-.buttons {
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-}
-
-button {
-  font-weight: bolder;
-  padding: 6px;
-
-  &:first-of-type { color: lime; }
-}

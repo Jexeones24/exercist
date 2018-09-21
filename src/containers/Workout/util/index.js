@@ -10,10 +10,10 @@ export const buildWorkout = (time) => {
   const duration = getDuration(time);
 
   const buildFunctionMap = {
-    AMRAP: buildAmrap(time, duration, workoutStyle),
-    INTERVAL: buildInterval(time, duration, workoutStyle),
-    ROUNDS_FOR_TIME: buildRoundsForTime(time, duration, workoutStyle)
+    AMRAP: buildAmrap,
+    INTERVAL: buildInterval,
+    ROUNDS_FOR_TIME: buildRoundsForTime
   };
 
-  return buildFunctionMap[workoutStyle.shortName];
+  return buildFunctionMap[workoutStyle.shortName](time, duration, workoutStyle);
 };

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './time-display.module.scss';
 
 class TimeDisplay extends Component {
-  state = { value: Number(5) }
+  state = { value: Number(45) }
 
   incrementTime = (e) => {
     if (this.state.value >= 5 && this.state.value <= 44) {
