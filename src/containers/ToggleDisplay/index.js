@@ -6,15 +6,15 @@ import styles from './toggle-display.module.scss';
 class ToggleDisplay extends Component {
   state = {
     showWorkout: false,
-    time: 5
+    time: null
   };
 
   handleTimeChange = (e) => this.setState({ time: Number(e.target.value) });
 
-  handleTimeSubmit = (e) => {
-    e.preventDefault();
-    this.setState({ showWorkout: true });
+  updateTime = (time) => {
+    this.setState({ showWorkout: true, time });
   }
+
 
   render () {
     const {
@@ -28,9 +28,9 @@ class ToggleDisplay extends Component {
             <Workout time={time} />
             :
             <TimeDisplay
-              handleTimeSubmit={this.handleTimeSubmit}
-              handleTimeChange={this.handleTimeChange}
-              time={time}
+              getTimeSubmit={this.updateTime}
+              handleTimeIncrease={this.incrementTime}
+              handleTimeDecrease={this.decrementTime}
             />
         }
       </div>

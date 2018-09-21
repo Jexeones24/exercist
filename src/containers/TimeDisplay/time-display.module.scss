@@ -23,6 +23,14 @@ input {
   margin: 24px 0;
 }
 
+.submit {
+  position: absolute;
+  color: lime;
+  bottom: -24px;
+  right: 50%;
+  font-weight: bolder;
+}
+
 .plus,
 .minus {
   position: absolute;
