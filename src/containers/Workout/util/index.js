@@ -22,7 +22,6 @@ export const buildWorkout = (time) => {
         ...buildRoundsForTime(time, duration, workoutStyle),
       };
     case INTERVAL:
-      console.log('INTERVAL');
       return {
         ...buildInterval(time, duration, workoutStyle),
       };

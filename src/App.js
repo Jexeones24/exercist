@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import Workout from 'containers/Workout';
+import Navbar from 'components/Navbar';
+import Footer from 'components/Footer';
+import ToggleDisplay from 'containers/ToggleDisplay';
+import styles from './App.module.scss';
 
 class App extends Component {
-  state = { time: 15 }
-
   render() {
     return (
-      <div>
-        <Workout time={this.state.time} />
+      <div className={styles.content}>
+        <Navbar />
+          <ToggleDisplay />
+        <Footer />
       </div>
     );
   }

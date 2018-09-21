@@ -1,0 +1,45 @@
+h3, h4 {
+  color: #FFA500;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  background-color: silver;
+  font-size: 28px;
+  font-weight: bolder;
+  padding: 12px;
+  width: 75px;;
+  height: 42px;
+}
+
+.input-wrapper {
+  position: relative;
+  margin: 24px 0;
+}
+
+.plus,
+.minus {
+  position: absolute;
+  background-color: white;
+  padding: 5px;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightGrey;
+}
+
+.plus {
+  top: 0;
+}
+.minus {
+  bottom: 0;
+}

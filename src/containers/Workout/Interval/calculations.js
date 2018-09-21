@@ -36,7 +36,6 @@ export const buildInterval = (time, duration) => {
   const secondsPerMovement = calculateSecondsPerMovement(type.workPeriodInSecondsWithRest, movementCount, movementsWithWeightLoads);
   const formattedRepsAndMovements = getFormattedWeightLoads(movementsWithWeightLoads, secondsPerMovement);
   const title = `${type.longName}`;
-  console.log(formattedRepsAndMovements, title);
 
   return {
     title,
