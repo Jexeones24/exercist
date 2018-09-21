@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Arrows from 'components/Icons/Arrows';
 import Slide from './slide';
 import classnames from 'classnames';
 import styles from './slider.module.scss';
@@ -10,7 +11,13 @@ class Slider extends Component {
   }
 
   goToPrevious = () => {
+    if (this.state.currentIdx === 0) {
+      return null;
+    }
 
+    this.setState(prevState => ({
+      currentIdx: prevState.currentIdx - 1
+    }));
   }
 
   goToNext = () => {
@@ -19,11 +26,16 @@ class Slider extends Component {
     }
 
     this.setState(prevState => ({
-      currentIdx: prevState.currentIdx + 1,
-    }))
+      currentIdx: prevState.currentIdx + 1
+    }));
   }
 
   render () {
+    const slideClassNames = (idx) => classnames(
+      styles.slide,
+      this.state.currentIdx === idx && styles.active
+    );
+
     return (
       <div className={styles.slider}>
 
@@ -32,6 +44,7 @@ class Slider extends Component {
             .map((slide, idx) => (
               <Slide
                 key={idx}
+                classNames={slideClassNames(idx)}
                 content={slide}
               />
             ))
@@ -39,23 +52,9 @@ class Slider extends Component {
         </div>
 
         <div className={styles.buttons}>
-          <span
-            className={styles.next}
-            onClick={this.goToNext}
-          >
-            NEXT
-          </span>
-          <span
-            className={styles.try}
-          >
-            TRY!
-          </span>
-          <span
-            className={styles.back}
-            onClick={this.goToPrevious}
-          >
-            BACK
-          </span>
+          <Arrows forward onClick={this.goToNext} />
+          <span className={styles.try}>TRY</span>
+          <Arrows onClick={this.goToPrevious}/>
         </div>
       </div>
     );

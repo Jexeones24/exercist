@@ -14,7 +14,7 @@ export const buildRoundsForTime = (time, duration, workoutStyle) => {
   const movementsWithWeightLoads = assignWeightLoadsToMovements(movements);
   const secondsPerMovement = calculateSecondsPerMovement(timePerRound, movementCount, movementsWithWeightLoads);
   const formattedRepsAndMovements = getFormattedWeightLoads(movementsWithWeightLoads, secondsPerMovement);
-  const title = `${rounds} ${workoutStyle.longName}`;
+  const title = `${rounds} ${workoutStyle.longName} (${time}:00 time cap)`;
 
   return {
     title,

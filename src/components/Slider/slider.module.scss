@@ -1,18 +1,30 @@
 .slides-wrapper {
   min-width: 100%;
   height: 325px;
-  overflow-x: scroll;
-  display: flex;
+  position: relative;
 }
 
 .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
   min-width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-right: 8px;
+  opacity: 0;
+  z-index: 1;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bolder;
+  color: #00FFFF;
+  margin-right: 12px;
+}
 
 .name,
 .text-wrapper {
@@ -21,29 +33,40 @@
   margin-bottom: 8px;
 
   &:first-of-type {
-    color: #FFA500; 
+    color: #FFA500;
     font-weight: bolder;
   }
 }
 
+.icon-wrapper {
+  margin-top: 6px;
+}
+
+img {
+  height: 18px;
+  width: 18px;
+}
+
 .text-wrapper {
   display: flex;
-  align-items: stretch;
   flex-direction: column;
-  flex-grow: 1;
+  height: 260px;
 }
 
 .buttons {
   background-color: white;
   display: flex;
   justify-content: space-between;
+  padding: 6px;
 }
 
-.back,
-.next,
 .try {
   font-weight: bolder;
-  padding: 6px;
-
-  &:nth-of-type(2) { color: lime; }
+  color: lime;
 }
+
+.active {
+  opacity: 1;
+  z-index: 2;
+}
+
