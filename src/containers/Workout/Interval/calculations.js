@@ -9,6 +9,7 @@ import {
   TABATA,
   INTERVAL_TYPES
 } from './constants';
+import { NAMES } from '../../../names';
 
 const getIntervalType = (time, duration) => {
   const types = INTERVAL_TYPES.filter(int => int.possibleDurations.includes(duration));
@@ -29,6 +30,7 @@ const getIntervalType = (time, duration) => {
 };
 
 export const buildInterval = (time, duration) => {
+  const name = getRandom(NAMES);
   const type = getIntervalType(time, duration);
   const movementCount = getRandom(type.movementCounts[duration]);
   const movements = getMovements(movementCount);
@@ -38,6 +40,7 @@ export const buildInterval = (time, duration) => {
   const title = `${type.longName} for ${time} Minutes`;
 
   return {
+    name,
     title,
     formattedRepsAndMovements
   };

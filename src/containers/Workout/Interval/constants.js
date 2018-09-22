@@ -31,8 +31,8 @@ export const EMOM = {
   ],
   movementCounts: {
     SHORT_DURATION_RANGE: [1],
-    MODERATE_DURATION_RANGE: [1],
-    LONG_DURATION_RANGE: [1]
+    MODERATE_DURATION_RANGE: [1, 2],
+    LONG_DURATION_RANGE: [1, 2]
   },
   workPeriodInSecondsWithRest: 50
 };
@@ -64,8 +64,8 @@ export const E3MOM = {
   ],
   movementCounts: {
     SHORT_DURATION_RANGE: [1, 2],
-    MODERATE_DURATION_RANGE: [1, 2],
-    LONG_DURATION_RANGE: [1, 2]
+    MODERATE_DURATION_RANGE: [1, 2, 3],
+    LONG_DURATION_RANGE: [1, 2, 3]
   },
   workPeriodInSecondsWithRest: 150
 };

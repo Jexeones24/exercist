@@ -15,6 +15,7 @@ class Workout extends Component {
       <div className={styles['workout-container']}>
         <Slider
           slides={this.workouts}
+          showTimeDisplay={this.props.showTimeDisplay}
         />
       </div>
     );

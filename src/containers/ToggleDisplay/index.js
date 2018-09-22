@@ -11,10 +11,16 @@ class ToggleDisplay extends Component {
 
   handleTimeChange = (e) => this.setState({ time: Number(e.target.value) });
 
-  updateTime = (time) => {
-    this.setState({ showWorkout: true, time });
+  handleTimeSubmit = (time) => {
+    this.setState({ time });
+    this.toggleDisplay();
   }
 
+  toggleDisplay = () => {
+    this.setState({
+      showWorkout: !this.state.showWorkout
+    });
+  }
 
   render () {
     const {
@@ -25,10 +31,13 @@ class ToggleDisplay extends Component {
     return (
       <div className={styles.content}>
         { showWorkout ?
-            <Workout time={time} />
+          <Workout
+            time={time}
+            showTimeDisplay={this.toggleDisplay}
+          />
             :
             <TimeDisplay
-              getTimeSubmit={this.updateTime}
+              getTimeSubmit={this.handleTimeSubmit}
               handleTimeIncrease={this.incrementTime}
               handleTimeDecrease={this.decrementTime}
             />
