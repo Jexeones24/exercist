@@ -6,7 +6,7 @@ import styles from './workout.module.scss';
 
 class Workout extends Component {
   get workouts() {
-    return [...Array(3)]
+    return [...Array(10)]
       .map(el => buildWorkout(this.props.time));
   }
 

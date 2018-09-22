@@ -2,14 +2,14 @@ import { HEAVY, MODERATE, MONOSTRUCTURAL, METERS } from '../../../movementData';
 
 const adjustRepsForIntensity = (movement, seconds) => {
   if (movement.intensity === HEAVY) {
-    return Math.floor(seconds / (movement.secondsPerRep + 10));
+    return Math.floor(seconds / (movement.secondsPerRep + 7));
   }
 
   if (movement.intensity === MODERATE) {
-    return Math.floor(seconds / (movement.secondsPerRep + 6));
+    return Math.floor(seconds / (movement.secondsPerRep + 3));
   }
 
-    return Math.floor(seconds / (movement.secondsPerRep + 4))
+    return Math.floor(seconds / (movement.secondsPerRep + 1))
 };
 
 export const getReps = (movement, seconds) => {
