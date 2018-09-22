@@ -13,7 +13,7 @@ class TimeDisplay extends Component {
       <div className={styles['time-display-container']}>
         <div className={styles['text-wrapper']}>
           <div className={styles.header}>Enter a desired WORKOUT TIME to begin.</div>
-          <h4>A workout formatted within the desired time domain will be prepared.</h4>
+          <h4>10 workouts formatted within the desired time domain will be prepared.</h4>
         </div>
         <div className={styles['outer-input-wrapper']}>
           <div className={styles['input-wrapper']}>
