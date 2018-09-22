@@ -81,8 +81,11 @@ const mapRepsToMovements = (args) => {
     return unformattedValues.map(v => formatRandom(v));
   }
 
-  const result = [formatLadder({ reps, movements })];
-  return result;
+  if (movements.filter(m => m.type === MONOSTRUCTURAL).length !== 0) {
+    reorder(movements);
+  }
+
+  return  [formatLadder({ reps, movements })];
 };
 
 const formatRandom = (values) => {
@@ -109,6 +112,7 @@ const formatLadder = (values) => {
     const type = get(m, 'type', null);
 
     if (type === MONOSTRUCTURAL && unit) {
+      // add custom values here for cardio elements in ladders
       return `${name}`;
     }
 
@@ -116,4 +120,15 @@ const formatLadder = (values) => {
   }).join(', ');
 
   return `${reps.join(', ')}... each of ${str}`;
+};
+
+const moveLast = (array, target) => {
+  const idx = array.indexOf(target);
+  array.push(array.splice(idx, 1)[0]);
+  return array;
+};
+
+const reorder = (array) => {
+  const cardio = array.filter(m => m.type === MONOSTRUCTURAL);
+  return cardio.map(el => moveLast(array, el))[0];
 };
