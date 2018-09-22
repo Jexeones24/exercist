@@ -7,10 +7,15 @@ export const AMRAP = {
     LONG_DURATION_RANGE: [3, 5]
   },
   repSchemes: [
-    { name: 'ASCENDING_LADDER' },
-    { name: 'DESCENDING_LADDER' },
-    { name: 'CLASSIC' },
-    { name: 'TENS' },
+    {
+      name: 'LADDER',
+      types: [
+        {
+          name: 'ASCENDING',
+          offset: [1, 2, 3, 4]
+        }
+      ]
+    },
     { name: 'RANDOM' }
   ]
 };

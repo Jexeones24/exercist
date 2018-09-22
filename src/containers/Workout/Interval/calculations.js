@@ -32,9 +32,9 @@ export const buildInterval = (time, duration) => {
   const type = getIntervalType(time, duration);
   const movementCount = getRandom(type.movementCounts[duration]);
   const movements = getMovements(movementCount);
-  const movementsWithWeightLoads = assignWeightLoadsToMovements(movements);
-  const secondsPerMovement = calculateSecondsPerMovement(type.workPeriodInSecondsWithRest, movementCount, movementsWithWeightLoads);
-  const formattedRepsAndMovements = getFormattedWeightLoads(movementsWithWeightLoads, secondsPerMovement);
+  const weightLoads = assignWeightLoadsToMovements(movements);
+  const secondsPerMovement = calculateSecondsPerMovement(type.workPeriodInSecondsWithRest, movementCount, weightLoads);
+  const formattedRepsAndMovements = getFormattedWeightLoads(weightLoads, secondsPerMovement);
   const title = `${type.longName} for ${time} Minutes`;
 
   return {
