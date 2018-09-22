@@ -24,10 +24,11 @@
   font-weight: bolder;
   color: #00FFFF;
   margin-right: 12px;
+  margin-bottom: 12px;
 }
 
 .name,
-.text-wrapper {
+.slide-wrapper {
   background-color: white;
   padding: 8px;
   margin-bottom: 8px;
@@ -36,6 +37,23 @@
     color: #FFA500;
     font-weight: bolder;
   }
+}
+
+.slide-wrapper {
+  display: flex;
+  height: 260px;
+}
+
+.workout-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.right-side-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 6px;
 }
 
 .icon-wrapper {
@@ -47,12 +65,6 @@ img {
   width: 18px;
 }
 
-.text-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 260px;
-}
-
 .buttons {
   background-color: white;
   display: flex;
@@ -60,9 +72,13 @@ img {
   padding: 6px;
 }
 
-.try {
+.toggle {
   font-weight: bolder;
-  color: lime;
+  color: blue;
+
+  &:hover {
+    color: lime;
+  }
 }
 
 .active {

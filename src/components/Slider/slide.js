@@ -10,20 +10,23 @@ const Slide = ({ classNames, content }) => {
   return (
     <div className={classNames}>
       <div className={styles.name}>"STOOPID NAME"</div>
-      <div className={styles['text-wrapper']}>
-        <div className={styles.header}>
+      <div className={styles['slide-wrapper']}>
+        <div className={styles['workout-body']}>
           <span className={styles.title}>{ title }</span>
+          <React.Fragment>
+            { formattedRepsAndMovements
+                .map((reps, idx) => (
+                  <div key={idx}>{ reps }</div>
+                ))
+            }
+          </React.Fragment>
+        </div>
+        <div className={styles['right-side-icons']}>
           <span className={styles['icon-wrapper']} onClick={() => alert('Favorited!!!')}>
             <img src='http://www.downloadclipart.net/large/11072-red-heart-design.png' />
           </span>
+          <span>TRY</span>
         </div>
-        <React.Fragment>
-          { formattedRepsAndMovements
-              .map((reps, idx) => (
-                <div key={idx}>{ reps }</div>
-              ))
-          }
-        </React.Fragment>
       </div>
     </div>
   );

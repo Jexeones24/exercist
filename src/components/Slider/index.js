@@ -38,7 +38,6 @@ class Slider extends Component {
 
     return (
       <div className={styles.slider}>
-
         <div className={styles['slides-wrapper']}>
           { this.state.slides
             .map((slide, idx) => (
@@ -50,10 +49,14 @@ class Slider extends Component {
             ))
           }
         </div>
-
         <div className={styles.buttons}>
           <Arrows forward onClick={this.goToNext} />
-          <span className={styles.try}>TRY</span>
+          <span
+            className={styles.toggle}
+            onClick={this.props.showTimeDisplay}
+          >
+            CHOOSE NEW TIME
+          </span>
           <Arrows onClick={this.goToPrevious}/>
         </div>
       </div>
