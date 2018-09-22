@@ -43,4 +43,3 @@ export const getFormattedWeightLoads = (movementsWithLoads, secondsPerMovement) 
 
   return unformatted.map(u => formatRepsAndMovements(u));
 };
-
