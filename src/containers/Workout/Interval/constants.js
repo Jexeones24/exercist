@@ -9,9 +9,10 @@ export const INTERVAL = {
 export const TABATA = {
   shortName: 'TABATA',
   longName: 'Tabata',
-  divisibleBy: [4, 8, 16, 20],
+  divisibleBy: [4, 8, 12, 16],
   possibleDurations: [
-    SHORT_DURATION_RANGE
+    SHORT_DURATION_RANGE,
+    MODERATE_DURATION_RANGE
   ],
   movementCounts: {
     SHORT_DURATION_RANGE: [1],

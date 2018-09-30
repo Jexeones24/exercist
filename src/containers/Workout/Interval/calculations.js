@@ -9,10 +9,11 @@ import {
   TABATA,
   INTERVAL_TYPES
 } from './constants';
+import { buildTabata } from './Tabata';
 import { NAMES } from '../../../names';
 
 const getIntervalType = (time, duration) => {
-  const types = INTERVAL_TYPES.filter(int => int.possibleDurations.includes(duration));
+  const types = INTERVAL_TYPES.filter(i => i.possibleDurations.includes(duration));
   const typesByTimeFactor = types.filter(type => type.divisibleBy.some(d => factors(time).indexOf(d) !== -1));
 
   const type = getRandom(typesByTimeFactor);
@@ -32,6 +33,11 @@ const getIntervalType = (time, duration) => {
 export const buildInterval = (time, duration) => {
   const name = getRandom(NAMES);
   const type = getIntervalType(time, duration);
+
+  if (type === TABATA) {
+    return buildTabata({ duration, time, name });
+  }
+
   const movementCount = getRandom(type.movementCounts[duration]);
   const movements = getMovements(movementCount);
   const weightLoads = assignWeightLoadsToMovements(movements);
